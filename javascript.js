@@ -22,13 +22,33 @@ buttons.map( button => {
             default: 
                 input.textContent += event.target.textContent;
         }
+
        } catch (error) {
-            alert('there is an error');
+        
+        alert('there is an error');
+
        }
     });
 });
 
+var operators = ['+','-', '%', '/', '*', '.'];
+let btnValue = input.textContent;
+
+if (operators.indexOf(btnValue) > -1) {
+        var lastChar = input.textContent[input.textContext.length - 1];
+        console.log('hello');
+    }
+
+const keyboardInput = document.getElementById('keyboard-input');
+
+document.addEventListener('keypress', (eventPress) => {
+    console.log(eventPress);
+})
+
 
 /**
  * TODO: 
+ * Avoiding first operator
+ * Input through keyboard
+ * 
  */
