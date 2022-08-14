@@ -11,7 +11,8 @@ body{
 
 #input{
    text-align: right;
-   height: 90px;
+   height: 100px;
+   width: 400px;
    line-height: 70px;
    padding: 16px 8px;
    font-size: 25px;
