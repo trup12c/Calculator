@@ -1,6 +1,5 @@
 let input = document.getElementById('input');
 let buttons = Array.from(document.getElementsByClassName('button'));
-let operators = ['+','-', '%', '/', '*', '.'];
 
 buttons.map( button => {
     button.addEventListener('click', function(event) {
@@ -26,34 +25,31 @@ buttons.map( button => {
 
        } catch (error) {
         
-        alert('there is an error');
+       input.value = 'Invalid Expression';
 
        }
     });
 });
 
-document.addEventListener('keypress', (event) => {
-
-
-    try {
+document.addEventListener('keydown', (event) => {
+     
+     try {
         if(event.key === 'Enter') {
             input.value = eval(input.value); 
          }
+         else if(event.key === 'Backspace') {
+             if(typeof input.value === 'string'){
+                input.value = input.value.slice(0,-1);
+            }
+         }
          else{
          input.value += event.key; 
+        
          }
 
         
-    } catch (error) {
-        alert('there is an error'); 
-    }
+     } catch (error) {
+         input.value = 'Invalid Expression'; 
+     }
     
 });
-
-
-/**
- * TODO: 
- * Avoiding first operator
- * Input through keyboard
- * 
- */
